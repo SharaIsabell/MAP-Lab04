@@ -5,16 +5,24 @@ import java.util.ArrayList;
 public class Filme {
 	private String nome;
 	private ArrayList<Funcionario> elenco;
-	private Diretor diretor;
-	private Roteirista roteirista;
+	private Funcionario diretor;
+	private Funcionario roteirista;
 	private StringBuilder creditos;
 	
-	public Filme(String nome, Diretor diretor, Roteirista roteirista) {
+	public Filme(String nome, Funcionario diretor, Funcionario roteirista) {
 		this.nome = nome;
-		this.diretor = diretor; //Lembrar de colocar diretor e roteirista como func. e usar instanceof para checar
-		diretor.addFilme(this);
-		this.roteirista = roteirista;
-		roteirista.addFilme(this);
+		if(diretor instanceof Diretor) {
+			this.diretor = diretor; 
+			diretor.addFilme(this);
+		}else {
+			throw new FilmeException("Para exercer o cargo de diretor do filme o funcionário tem que ser um diretor");
+		}
+		if(diretor instanceof Diretor) {
+			this.roteirista = roteirista;
+			roteirista.addFilme(this);
+		}else {
+			throw new FilmeException("Para exercer o cargo de roteirista do filme o funcionário tem que ser um roteirista");
+		}
 		elenco = new ArrayList<>();
 		creditos = new StringBuilder();
 	}

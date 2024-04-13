@@ -14,7 +14,7 @@ public class Gestor {
 		return new Diretor(nome);
 	}
 	
-	public static Filme novoFilme(String nome, Diretor diretor, Roteirista roteirista) {
+	public static Filme novoFilme(String nome, Funcionario diretor, Funcionario roteirista) {
 		return new Filme(nome, diretor, roteirista);
 	}
 
