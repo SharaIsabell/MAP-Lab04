@@ -9,7 +9,7 @@ public class Filme {
 	private Funcionario roteirista;
 	private StringBuilder creditos;
 	
-	public Filme(String nome, Funcionario diretor, Funcionario roteirista) {
+	protected Filme(String nome, Funcionario diretor, Funcionario roteirista) {
 		this.nome = nome;
 		if(diretor instanceof Diretor) {
 			this.diretor = diretor; 

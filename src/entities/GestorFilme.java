@@ -1,6 +1,6 @@
 package entities;
 
-public class Gestor {
+public class GestorFilme {
 	
 	public static Ator ehAtor(String nome) {
 		return new Ator(nome);
@@ -12,6 +12,14 @@ public class Gestor {
 	
 	public static Diretor ehDiretor(String nome) {
 		return new Diretor(nome);
+	}
+	
+	public static Camera ehCamera(String nome) {
+		return new Camera(nome);
+	}
+	
+	public static Cinegrafista ehCinegrafista(String nome) {
+		return new Cinegrafista(nome);
 	}
 	
 	public static Filme novoFilme(String nome, Funcionario diretor, Funcionario roteirista) {
