@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class AtorTest {
-	
+public class CinegrafistaTest {
+
 	static Funcionario func1;
 	static Funcionario func2;
 	static Funcionario func3;
@@ -14,11 +14,13 @@ public class AtorTest {
 	static Funcao ator;
 	static Funcao diretor;
 	static Funcao roteirista;
+	static Funcao cinegrafista;
 	
 	@BeforeClass
 	public static void criarObjetos() {
 		func1 = GestorFilme.contratarFuncionario("Rennan");
 		ator = GestorFilme.ehAtor(func1);
+		cinegrafista = GestorFilme.ehCinegrafista(func1);
 		
 		func2 = GestorFilme.contratarFuncionario("Shara");
 		diretor = GestorFilme.ehDiretor(func2);
@@ -28,16 +30,16 @@ public class AtorTest {
 
 		filme = new Filme("Universitários", func2, func3);
 		filme.addEmElenco(func1, ator);
+		filme.addEmElenco(func1, cinegrafista);
 	}
-	
 	@Test
-	public void addFilmeTest() { // Para testar se adicionou corretamente no ArrayList de filmes que o ator participou
-		assertEquals(1, ator.mostrarFilmesParticipou().size());
+	public void addFilmeTest() { // Para testar se adicionou corretamente no ArrayList de filmes que o cinegrafista participou
+		assertEquals(1, cinegrafista.mostrarFilmesParticipou().size());
 	}
 	
 	@Test
 	public void mostrarFilmesParticipouTest() { // Para testar se o filme correto foi adicionado no ArrayList de filmes
-		assertEquals("Universitários", ator.mostrarFilmesParticipou().get(0).getNome());
+		assertEquals("Universitários", cinegrafista.mostrarFilmesParticipou().get(0).getNome());
 	}
-	
+
 }
