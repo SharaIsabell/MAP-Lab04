@@ -2,7 +2,7 @@ package entities;
 
 import java.util.ArrayList;
 
-public class Roteirista implements Funcionario{
+public class Roteirista implements Funcao{
 	private String nome;
 	private ArrayList<Filme> filmesParticipou;
 

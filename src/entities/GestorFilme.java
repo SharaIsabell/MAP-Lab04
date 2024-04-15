@@ -2,24 +2,38 @@ package entities;
 
 public class GestorFilme {
 	
-	public static Ator ehAtor(String nome) {
-		return new Ator(nome);
+	public static Funcionario contratarFuncionario(String nome) {
+		return new Funcionario(nome);
 	}
 	
-	public static Roteirista ehRoteirista(String nome) {
-		return new Roteirista(nome);
+	public static Funcao ehAtor(Funcionario funcionario) {
+		Funcao ator = new Ator(funcionario.getNome());
+		funcionario.adicionarFuncao(ator);
+		return ator;
 	}
 	
-	public static Diretor ehDiretor(String nome) {
-		return new Diretor(nome);
+	public static Funcao ehRoteirista(Funcionario funcionario) {
+		Funcao roteirista = new Roteirista(funcionario.getNome());
+		funcionario.adicionarFuncao(roteirista);
+		return roteirista;
 	}
 	
-	public static Camera ehCamera(String nome) {
-		return new Camera(nome);
+	public static Funcao ehDiretor(Funcionario funcionario) {
+		Funcao diretor = new Diretor(funcionario.getNome());
+		funcionario.adicionarFuncao(diretor);
+		return diretor;
 	}
 	
-	public static Cinegrafista ehCinegrafista(String nome) {
-		return new Cinegrafista(nome);
+	public static Funcao ehCamera(Funcionario funcionario) {
+		Funcao camera = new Camera(funcionario.getNome());
+		funcionario.adicionarFuncao(camera);
+		return camera;
+	}
+	
+	public static Funcao ehCinegrafista(Funcionario funcionario) {
+		Funcao cinegrafista = new Cinegrafista(funcionario.getNome());
+		funcionario.adicionarFuncao(cinegrafista);
+		return cinegrafista;
 	}
 	
 	public static Filme novoFilme(String nome, Funcionario diretor, Funcionario roteirista) {
