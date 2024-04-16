@@ -52,6 +52,12 @@ public class FilmeTest {
 	}
 	
 	@Test(expected = FilmeException.class)
+	public void addEmElencoExcepitionTest() { // Para testar a exceção ao adicionar ao elenco
+		filme.addEmElenco(func2, diretor);
+		filme.addEmElenco(func4, camera);
+	}
+	
+	@Test(expected = FilmeException.class)
 	public void addEmElencoDiretor() { // Para testar se não é permitido adicionar dois ou mais diretores em um filme
 		filme.addEmElenco(func2, diretor);
 	}
